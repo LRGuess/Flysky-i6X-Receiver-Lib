@@ -7,7 +7,7 @@ void FlyskyReceiver::begin(HardwareSerial& serial) {
     iBusRc.begin(serial);
 }
 
-int FlyskyReceiver::readChannel(byte channelInput, int minLimit, int maxLimit, int defaultValue){
+int FlyskyReceiver::readAxis(byte channelInput, int minLimit, int maxLimit, int defaultValue){
     uint16_t ch = iBusRc.readChannel(channelInput);
 
     if (ch < 100) return defaultValue;
@@ -18,7 +18,7 @@ int FlyskyReceiver::readChannel(byte channelInput, int minLimit, int maxLimit, i
 bool FlyskyReceiver::readSwitch(byte switchInput, bool defaultValue) {
     int intDefaultValue = defaultValue ? 100 : 0;
 
-    int ch = readChannel(switchInput, 0, 100, intDefaultValue);
+    int ch = readAxis(switchInput, 0, 100, intDefaultValue);
 
     bool switchValue = ch > 50;
 

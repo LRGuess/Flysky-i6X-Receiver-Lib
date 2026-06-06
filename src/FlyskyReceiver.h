@@ -10,7 +10,7 @@ class FlyskyReceiver {
 
         void begin(HardwareSerial& serial);
 
-        int readChannel(byte channelInput, int minLimit, int maxLimit, int defaultValue);
+        int readAxis(byte channelInput, int minLimit, int maxLimit, int defaultValue);
 
         bool readSwitch(byte switchInput, bool defaultValue);
 

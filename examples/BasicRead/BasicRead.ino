@@ -11,7 +11,7 @@ void setup(){
 }
 
 void loop(){
-    int throttle = receiver.readChannel(2, -100, 100, 0);
+    int throttle = receiver.readAxis(2, -100, 100, 0);
 
     bool armSwitch = receiver.readSwitch(5, false);
 
