@@ -16,6 +16,6 @@ class FlyskyReceiver {
 
     private:
         IBusBM iBusRc;
-}
+};
 
 #endif

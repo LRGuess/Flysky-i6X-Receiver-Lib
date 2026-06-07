@@ -7,13 +7,13 @@ void setup(){
 
     Serial2.begin(115200);
 
-    receiver.begin(Serial2);
+    receiver.begin(Serial1);
 }
 
 void loop(){
-    int throttle = receiver.readAxis(2, -100, 100, 0);
+    int throttle = -receiver.readAxis(2, -100, 100, 0);
 
-    bool armSwitch = receiver.readSwitch(5, false);
+    bool armSwitch = receiver.readSwitch(6, false);
 
     Serial.print("Throttle: ");
     Serial.print(throttle);
@@ -21,5 +21,5 @@ void loop(){
     Serial.print(" | Arm: ");
     Serial.println(armSwitch);
 
-    delay(100)
+    delay(100);
 }
